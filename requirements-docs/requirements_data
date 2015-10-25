@@ -1,0 +1,37 @@
+Requirement Doc:
+Commands we will be using:
+
+         RMDIR - Delete a directory
+
+         MKD - Make a new directory
+
+         FTP - Connects to a remote FTP server
+
+         BYE - Exit connection to FTP server
+
+         CD - Change directory
+
+         GET - Get a file from the server and transfer it to the local computer *A main command*
+
+         MGET - Get multiple files
+
+         PUT - Put files to the remote server
+
+         MPUT - Put multiple files
+
+         LS - Lists files from server *A main command*
+
+         PWD - Print working directory *Use whenever the user changes directory to keep track in the GUI*
+         
+         CDUP - Go up a directory
+
+Notes:
+
+          We will need to use both ASCII and Binary protocols, ASCII for ASCII files and Binary for all others.
+          
+          Since we are doing a GUI, the classes (and therefore the work) will be broken up into five parts.
+          Part 1: GUI
+          Part 2: Connection (Ports, IP, just establish the connection and let the other classes pull from it.)
+          Part 3: Upload (Only handles uploading.)
+          Part 4: Download (Only handles downloading.)
+          Part 5: Other Commands (A cross-team class, we can implement this after completing the others.)
