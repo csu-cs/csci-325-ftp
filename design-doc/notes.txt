@@ -1,0 +1,12 @@
+DownloadMenuClassUML.dia:
+Very Simple--you *may* find that it is helpful to group section in a JPanel.  For example, the fileLabel/file/choose could be in one JPanel.  Although, it is not necessary.
+UploadDesignDoc.dia:
+This is not Class UML, please convert!
+FTP Server Login Design (Build 1).png:
+This is not Class UML, please convert!
+
+Overall:
+Provide a master class UML diagram to should all these classes use one another.  It looks like there are three classes, but I no not see how they interact with one another.
+
+Grade:
+resubmit!  Go ahead and start coding.
