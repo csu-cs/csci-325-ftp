@@ -2,13 +2,17 @@ package com.csci;
 
 import java.io.*;
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
+
 /**
  * Created by shea on 11/5/2015.
  * This is the GUI, it sends info to Upload and Connection, and receives info from Download.
  */
-public class JFrame {
+public class JFrame extends JPanel{
     public static int BUFFER_SIZE = 10240;
+
+
 
     protected JTextField userNameTextField = new JTextField("Username?");
     protected JPasswordField passwordTextField = new JPasswordField(20);
@@ -25,4 +29,7 @@ public class JFrame {
     protected String localFileName;
 
     protected String remoteFileName;
+
+    public JFrame(){
+    }
 }

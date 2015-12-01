@@ -1,7 +1,8 @@
 package com.csci;
 
 import java.io.*;
-
+import java.awt.*;
+import javax.swing.JFrame;
 
 public class Main {
     // On return from the JFrame, call the other functions.
@@ -12,6 +13,16 @@ public class Main {
     public String Password;
 
     public static void main(String[] args) {
+
+        JFrame frame = new JFrame("FTP Client");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.getContentPane().add(new JFrame());
+
+        frame.pack();
+        frame.setVisible(true);
+
+
 
     }
 }
