@@ -37,6 +37,9 @@ public class MainGUI extends javax.swing.JFrame {
         usernameLabel = new javax.swing.JLabel();
         passwordLabel = new javax.swing.JLabel();
         portLabel = new javax.swing.JLabel();
+        menuBar1 = new java.awt.MenuBar();
+        File = new java.awt.Menu();
+        Edit = new java.awt.Menu();
         titleLabel = new javax.swing.JLabel();
         permissionButton = new javax.swing.JButton();
         newfolderButton = new javax.swing.JButton();
@@ -46,6 +49,8 @@ public class MainGUI extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         localTree = new javax.swing.JTree();
         transferProgress = new javax.swing.JProgressBar();
+
+        LoginDialog.setTitle("FTP Login");
 
         passwordField.setText("jPasswordField1");
         passwordField.setDragEnabled(false);
@@ -59,7 +64,7 @@ public class MainGUI extends javax.swing.JFrame {
         portField.setText("21");
         portField.setDragEnabled(false);
 
-        activeField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        activeField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Passive", "Active" }));
 
         ipLabel.setText("Host:");
 
@@ -117,6 +122,12 @@ public class MainGUI extends javax.swing.JFrame {
                 .addContainerGap(95, Short.MAX_VALUE))
         );
 
+        File.setLabel("File");
+        menuBar1.add(File);
+
+        Edit.setLabel("Edit");
+        menuBar1.add(Edit);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         titleLabel.setText("FTP Client");
@@ -143,6 +154,7 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
+        remoteTree.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane3.setViewportView(remoteTree);
 
         jScrollPane4.setViewportView(localTree);
@@ -157,24 +169,23 @@ public class MainGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(refreshButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(permissionButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(newfolderButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(transferProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(transferProgress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(jScrollPane4)
-                    .addGap(322, 322, 322)))
+                    .addContainerGap()
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(378, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,6 +263,8 @@ public class MainGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Menu Edit;
+    private java.awt.Menu File;
     private javax.swing.JDialog LoginDialog;
     private javax.swing.JComboBox<String> activeField;
     private javax.swing.JTextField ipField;
@@ -259,6 +272,7 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTree localTree;
+    private java.awt.MenuBar menuBar1;
     private javax.swing.JButton newfolderButton;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;

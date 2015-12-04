@@ -21,7 +21,7 @@ public class Main {
     static JFrame frame = new JFrame("The CSCI325 FTP Client!");
     public static Connect connection = new Connect();
     public static Commands commands = new Commands();
-    public static final String FINAL_DIR = "C:/Users/Shea/Desktop/TestClient";
+    public static final String FINAL_DIR = "/Users/isiahjohnson/Library/Mobile Documents/";
     public static MainGUI mainGUI = new MainGUI();
 
     public static void main(String[] args){
