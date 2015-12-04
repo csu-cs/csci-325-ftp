@@ -9,6 +9,7 @@ package csci.ftp.gui.build;
  *
  * @author isiahjohnson
  */
+
 public class MainGUI extends javax.swing.JFrame {
 
     /**
@@ -49,6 +50,7 @@ public class MainGUI extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         localTree = new javax.swing.JTree();
         transferProgress = new javax.swing.JProgressBar();
+        jConsole = new javax.swing.JTextArea();
 
         LoginDialog.setTitle("FTP Login");
 
@@ -129,6 +131,11 @@ public class MainGUI extends javax.swing.JFrame {
         menuBar1.add(Edit);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("The CSCI325 FTP Client");
+        setMaximumSize(new java.awt.Dimension(1024, 768));
+        setMinimumSize(new java.awt.Dimension(640, 480));
+        setName("mainFrame"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(1024, 768));
 
         titleLabel.setText("FTP Client");
 
@@ -157,7 +164,11 @@ public class MainGUI extends javax.swing.JFrame {
         remoteTree.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane3.setViewportView(remoteTree);
 
+        localTree.setEditable(true);
         jScrollPane4.setViewportView(localTree);
+
+        jConsole.setColumns(20);
+        jConsole.setRows(5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -173,43 +184,40 @@ public class MainGUI extends javax.swing.JFrame {
                         .addComponent(permissionButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(newfolderButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(transferProgress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(499, 499, 499)
+                        .addComponent(transferProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(369, 369, 369))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(378, Short.MAX_VALUE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jConsole, javax.swing.GroupLayout.PREFERRED_SIZE, 1332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(titleLabel)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(titleLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(permissionButton)
                             .addComponent(newfolderButton)
-                            .addComponent(refreshButton))
-                        .addContainerGap(396, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(transferProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(53, Short.MAX_VALUE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(16, 16, 16)))
+                            .addComponent(refreshButton)))
+                    .addComponent(transferProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4))
+                .addGap(18, 18, 18)
+                .addComponent(jConsole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -266,24 +274,25 @@ public class MainGUI extends javax.swing.JFrame {
     private java.awt.Menu Edit;
     private java.awt.Menu File;
     private javax.swing.JDialog LoginDialog;
-    private javax.swing.JComboBox<String> activeField;
-    private javax.swing.JTextField ipField;
-    private javax.swing.JLabel ipLabel;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTree localTree;
+    javax.swing.JComboBox<String> activeField;
+    javax.swing.JTextField ipField;
+    javax.swing.JLabel ipLabel;
+    public static javax.swing.JTextArea jConsole;
+    javax.swing.JScrollPane jScrollPane3;
+    javax.swing.JScrollPane jScrollPane4;
+    javax.swing.JTree localTree;
     private java.awt.MenuBar menuBar1;
     private javax.swing.JButton newfolderButton;
-    private javax.swing.JPasswordField passwordField;
-    private javax.swing.JLabel passwordLabel;
-    private javax.swing.JButton permissionButton;
-    private javax.swing.JTextField portField;
-    private javax.swing.JLabel portLabel;
-    private javax.swing.JButton refreshButton;
-    private javax.swing.JTree remoteTree;
-    private javax.swing.JLabel titleLabel;
-    private javax.swing.JProgressBar transferProgress;
-    private javax.swing.JTextField usernameField;
-    private javax.swing.JLabel usernameLabel;
+    javax.swing.JPasswordField passwordField;
+    javax.swing.JLabel passwordLabel;
+    javax.swing.JButton permissionButton;
+    javax.swing.JTextField portField;
+    javax.swing.JLabel portLabel;
+    javax.swing.JButton refreshButton;
+    javax.swing.JTree remoteTree;
+    javax.swing.JLabel titleLabel;
+    javax.swing.JProgressBar transferProgress;
+    javax.swing.JTextField usernameField;
+    javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }
